@@ -8,7 +8,7 @@ void oddPosition(int *a,int n)
 	{
 		printf("%d ",a[i]);
 	}
-	printf("\n");
+	printf("\n"); 
 }
 
 void evenNumbers(int *a,int n)
