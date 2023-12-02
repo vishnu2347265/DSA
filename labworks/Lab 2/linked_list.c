@@ -6,7 +6,7 @@
 struct Medication {
     int id;
     char name[100];
-    int quantity;
+    int quantity;   
     float price;
     struct Medication* next; // Pointer to the next node in the linked list
 };

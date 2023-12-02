@@ -43,6 +43,11 @@ int getPrecedence(char op) {
         return 1;
     else if (op == '*' || op == '/')
         return 2;
+    else if (op=="^")
+    {
+        return 3;    
+    }
+    
     return 0;
 }
 
