@@ -17,7 +17,7 @@ struct MedicationList {
 };
 
 // Function to initialize the linked list
-void initializeList(struct MedicationList* list) {
+void initializeList(struct MedicationList* [__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2) {
     list->head = NULL;
 }
 
