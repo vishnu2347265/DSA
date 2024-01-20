@@ -87,21 +87,45 @@ int main() {
     srand(time(NULL));
 
     int size = 10;
-
     struct Medication medications[size];
-    generateRandomData(medications, size);
 
-    printf("Original Medications:\n");
-    printMedications(medications, size);
+    int option;
+    do {
+        printf("\n +-------------------------------+\n");
+        printf(" | 1. Generate Random Data       |\n");
+        printf(" | 2. Sort Medications (Merge)   |\n");
+        printf(" | 3. Display Medications        |\n");
+        printf(" | 4. Exit                       |\n");
+        printf(" +-------------------------------+\n");
+        printf("Enter your option: ");
+        scanf("%d", &option);
 
-    int comparisonsMerge = 0, transfersMerge = 0;
+        switch (option) {
+            case 1:
+                generateRandomData(medications, size);
+                printf("Random data generated.\n");
+                break;
+            case 2: {
+                int comparisonsMerge = 0, transfersMerge = 0;
+                mergeSort(medications, 0, size - 1, &comparisonsMerge, &transfersMerge);
+                printf("\nMedications after Merge Sort:\n");
+                printMedications(medications, size);
+                printf("Merge Sort Comparisons: %d\n", comparisonsMerge);
+                printf("Merge Sort Data Transfers: %d\n", transfersMerge);
+                break;
+            }
+            case 3:
+                printf("Medications:\n");
+                printMedications(medications, size);
+                break;
+            case 4:
+                printf("Exiting program.\n");
+                break;
+            default:
+                printf("Invalid option. Please enter a valid choice.\n");
+        }
 
-    mergeSort(medications, 0, size - 1, &comparisonsMerge, &transfersMerge);
-
-    printf("\nMedications after Merge Sort:\n");
-    printMedications(medications, size);
-    printf("Merge Sort Comparisons: %d\n", comparisonsMerge);
-    printf("Merge Sort Data Transfers: %d\n", transfersMerge);
+    } while (option != 5);
 
     return 0;
 }
