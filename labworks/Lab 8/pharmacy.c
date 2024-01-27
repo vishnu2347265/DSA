@@ -12,8 +12,6 @@ struct TreeNode {
     struct TreeNode* left;
     struct TreeNode* right;
 };
-
-// Function to create a new employee node
 struct TreeNode* createNode(struct Employee data) {
     struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));
     newNode->data = data;
@@ -21,7 +19,7 @@ struct TreeNode* createNode(struct Employee data) {
     return newNode;
 }
 
-// Function to insert an employee into the BST
+//insert an employee into the BST
 struct TreeNode* insert(struct TreeNode* root, struct Employee data) {
     if (root == NULL)
         return createNode(data);
@@ -34,7 +32,6 @@ struct TreeNode* insert(struct TreeNode* root, struct Employee data) {
     return root;
 }
 
-// Function to perform in-order traversal
 void inOrderTraversal(struct TreeNode* root) {
     if (root != NULL) {
         inOrderTraversal(root->left);
@@ -43,7 +40,6 @@ void inOrderTraversal(struct TreeNode* root) {
     }
 }
 
-// Function to perform pre-order traversal
 void preOrderTraversal(struct TreeNode* root) {
     if (root != NULL) {
         printf("[Employee ID: %d, Name: %s, Position: %s]\n", root->data.employeeID, root->data.name, root->data.position);
@@ -52,7 +48,6 @@ void preOrderTraversal(struct TreeNode* root) {
     }
 }
 
-// Function to perform post-order traversal
 void postOrderTraversal(struct TreeNode* root) {
     if (root != NULL) {
         postOrderTraversal(root->left);
@@ -61,7 +56,6 @@ void postOrderTraversal(struct TreeNode* root) {
     }
 }
 
-// Function to search for an employee in the BST
 struct TreeNode* search(struct TreeNode* root, int employeeID) {
     if (root == NULL || root->data.employeeID == employeeID)
         return root;
@@ -72,7 +66,7 @@ struct TreeNode* search(struct TreeNode* root, int employeeID) {
     return search(root->right, employeeID);
 }
 
-// Function to find the node with the minimum value in a BST
+// minimum value in a BST
 struct TreeNode* findMin(struct TreeNode* node) {
     while (node->left != NULL)
         node = node->left;
@@ -80,7 +74,6 @@ struct TreeNode* findMin(struct TreeNode* node) {
     return node;
 }
 
-// Function to delete an employee from the BST
 struct TreeNode* deleteNode(struct TreeNode* root, int employeeID) {
     if (root == NULL)
         return root;
@@ -107,7 +100,6 @@ struct TreeNode* deleteNode(struct TreeNode* root, int employeeID) {
     return root;
 }
 
-// Function to calculate the height of the BST
 int height(struct TreeNode* root) {
     if (root == NULL)
         return 0;
