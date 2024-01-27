@@ -103,16 +103,6 @@ void kruskalMST(int graph[V][V], int V) {
     }
 }
 
-// Function to get distances between pharmacy locations from the user
-void getDistances(int graph[V][V], int V) {
-    printf("Enter the distances between pharmacy locations:\n");
-    for (int i = 0; i < V; i++) {
-        for (int j = 0; j < V; j++) {
-            scanf("%d", &graph[i][j]);
-        }
-    }
-}
-
 int main() {
     int V;
 
@@ -124,7 +114,12 @@ int main() {
     int graph[V][V];
 
     // Get distances between pharmacy locations from the user
-    getDistances(graph, V);
+    printf("Enter the distances between pharmacy locations:\n");
+    for (int i = 0; i < V; i++) {
+        for (int j = 0; j < V; j++) {
+            scanf("%d", &graph[i][j]);
+        }
+    }
 
     printf("\nChoose the algorithm:\n");
     printf("1. Prim's Algorithm\n");
